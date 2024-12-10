@@ -1,6 +1,6 @@
 ## **Literary Book Application**
 An application that showcases a simple Book purchasing website.
-#### Created using Javscript, HTML/CSS wiht functionalities like login page, Registeration, Become a member of a book club and add to cart.
+#### Created using Javscript, HTML/CSS with basic functionalities like login page, Registeration, Become a member of a book club and add to cart.
 
 Screenshots:
 
