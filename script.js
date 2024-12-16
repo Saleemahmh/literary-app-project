@@ -33,6 +33,7 @@ initApp();
 let iconCart = document.querySelector('.menu-cart');
 let iconCartlist = document.querySelector('.cart-list');
 let iconCartSpan = iconCart.querySelector('.cart-count');
+let cartTotal = document.querySelector('.cart-amount-total');
 let body = document.querySelector('body');
 let closeCart = document.querySelector('.close');
 let cart = [];
@@ -64,6 +65,7 @@ const setProductInCart = (idProduct, value) => {
 const addCartToHTML = () => {
     iconCartlist.innerHTML = '';
     let totalQuantity = 0;
+    let totalPrice= 0;
     if(cart.length > 0){
         cart.forEach(item => {
             totalQuantity = totalQuantity +  item.quantity;
@@ -87,11 +89,13 @@ const addCartToHTML = () => {
                     <span class="plus" data-id="${info.id}">+</span>
                 </div>
             `;
+            totalPrice = totalPrice + (info.price * item.quantity);
             
         })
     }
 
     iconCartSpan.innerText = totalQuantity;
+    cartTotal.innerHTML=`Rs. ${totalPrice}`
 }
 
 document.addEventListener('click', (event) => {
