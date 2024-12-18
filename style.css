@@ -179,6 +179,18 @@ border:none;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+.pro-btn{
+    width:100%;
+    border:none;
+    padding:10px;
+    margin:10px 0;
+    font-weight: 700;
+    letter-spacing: 1;
+    cursor:pointer;
+    font-family: "Sofia", cursive;
+    cursor:pointer;
+    
+}
 .cart-btn button{
     background-color:#f295c2;
     border: none;
@@ -235,19 +247,132 @@ border:none;
     color: #480224;
 }
 .addCart{
-    display: flex;
+    background-color:#b30056;
+    color:#f295c2;
+    width:45%;
+    border:0;
+    border-radius: 4px;
+    padding: 10px 0;
+    font-family: "Sofia", cursive;
+}
+
+ 
+
+/*wishlist */
+
+.wishList{
     background-color:#b30056;
     color:#f295c2;
     border:0;
-    margin-bottom: 20px;
-    margin-left: 10px;
-    padding:5px 10px 5px 10px;
-    width:60%;
-    align-items: flex-start;
-    justify-content: center;
+    width:45%;
+    padding: 10px 0;
     border-radius: 4px;
     font-family: "Sofia", cursive;
 }
+
+
+.wish-container{
+    display: flex;
+    align-content: right;
+    font-family: "Prociono", serif;
+}
+.wish{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width:100%;
+    float:center;
+    max-width:350px;
+    height:calc(100% - 80px);
+    position:fixed;
+    top:0;
+    background-color: #610733;
+    color:#f295c2;
+    border-radius:8px;
+    margin-top:60px;
+    padding:1%;
+  right: 0px;
+  padding: 10px;
+  
+}
+.wish-title{
+    letter-spacing: 1;
+    line-height: 2;
+}
+
+.wish-action{
+    margin-top: 10px;
+}
+.wish-btn{
+    width:100%;
+    border:none;
+    padding:10px;
+    margin:10px 0;
+    background-color:#f295c2;
+    color:#b30056;
+    font-weight: 700;
+    letter-spacing: 1;
+    cursor:pointer;
+    font-family: "Sofia", cursive;
+    cursor:pointer;
+    display: grid;
+}
+.wish-btn button{
+    background-color:#f295c2;
+    border: none;
+    color:#b30056;
+    font-weight: 500;
+    cursor: pointer;
+}
+.wish-btn .close{
+    background-color:#b30056;
+    color:#f295c2;
+}
+ .wish{
+    right: -400px;
+    transition:0.5s;
+}
+.activeTabWish .wish{
+    right:0;
+}
+.activeTabWish .wish{
+    transform:translateX(-30px);
+} 
+.wish-list{
+    overflow:auto
+}
+.wish-list .item img{
+    width:100%;
+    padding: 5px;
+}
+.wish-list .item{
+    display:grid;
+    grid-template-columns:50px 100px 40px 1fr;
+    gap:20px;
+    align-items: center;
+    text-align: center;
+}
+.wish-list .item .quantity{
+    display:flex;
+}
+.wish-list .item .quantity span{
+    width:25px;
+    height:25px;
+    background-color:#ff9ccc;
+    color: #480224;
+    border-radius: 50%;
+    cursor:pointer;
+}   
+.wish-list .item .quantity span:nth-child(2){
+    background-color: transparent;
+    color: white;
+    
+}
+.wish-list .item:nth-child(even){
+    background-color: #ffa8d2;
+    color: #480224;
+}
+
 
 
 /*hero section */
@@ -851,69 +976,6 @@ h2{
 }
 .social-icons a:hover i{
     color:rgba(0,0,0,.3);
-}
-
-
-/* All Books*/
-
-#pagination{
-    text-align: center;
-    margin-bottom: 30px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-}
-#pagination button{
-    text-decoration: none;
-    background-color: #b30056;
-    padding:0px 20px;
-    border-radius: 4px;
-    color: #ffa8d2;
-    font-weight: 600;
-    width:20px;
-    height:40px;
-    margin-right:15px;
-    display:flex;
-    align-items: center;
-   
-}
-#pagination button:disabled{
-    text-decoration: none;
-    background-color: #610230;
-    padding:0px 20px;
-    border-radius: 4px;
-    color: rgb(255, 210, 240);
-    font-weight: 600;
-    width:20px;
-    height:40px;
-    margin-right:15px;
-
-    
-}
-#next-button{
-    margin-left: 170px;
-}
-#pagination button i{
-    font-size:16px;
-    font-weight: 600;
-}
-
-#pagination .pagination-number{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    font-size:16px;
-    font-weight: 600;
-    padding:0px 20px;
-
-    
-}
-#pagination .pagination-number .active{
-    font-size:16px;
-    font-weight: 600;
-    background-color:#ffa8d2;
-    color:  #b30056;
 }
 
 

@@ -21,8 +21,10 @@ products.forEach(product => {
                 </div>
                 <h4>Rs. ${product.price}</h4>
             </div>
-            <button class="addCart" data-id="${product.id}">Add to cart</button>
-            <a href="wishlist.html" id="1" style="left:250px;"><i class="fa-duotone fa-solid fa-heart" ></i></a>
+            <div class="pro-btn">
+            <button class="addCart" data-id="${product.id}"><i class="fa-duotone fa-solid fa-cart-shopping"></i></button>
+            <button class="wishList" data-id="${product.id}"><i class="fa-duotone fa-solid fa-heart"></i></button>
+             </div>           
         </div>`;
         listProduct.appendChild(newProduct);
 })
@@ -31,20 +33,42 @@ products.forEach(product => {
 initApp();
 
 let iconCart = document.querySelector('.menu-cart');
+let iconWish = document.querySelector('.menu-wish');
 let iconCartlist = document.querySelector('.cart-list');
+let iconWishlist = document.querySelector('.wish-list');
 let iconCartSpan = iconCart.querySelector('.cart-count');
 let cartTotal = document.querySelector('.cart-amount-total');
+let cartTotalQuantity = document.querySelector('.cart-total-quantity');
+let checkOutCart = document.querySelector('.checkout');
 let body = document.querySelector('body');
 let closeCart = document.querySelector('.close');
+let closeWish = document.querySelector('.wishclose');
 let cart = [];
-
-// open and close tab
+let wish = [];
+// open and close tab cart
 iconCart.addEventListener('click', () => {
     body.classList.add('activeTabCart');
 })
 closeCart.addEventListener('click', () => {
     body.classList.remove('activeTabCart');
 })
+checkOutCart.addEventListener('click', () =>{
+    body.classList.remove('activeTabCart');
+    alert("Thank You for shopping with us.");
+    
+})
+// open and close tab wish
+
+iconWish.addEventListener('click', () => {
+    body.classList.add('activeTabWish');
+})
+closeWish.addEventListener('click', () => {
+    body.classList.remove('activeTabWish');
+})
+
+
+
+
 
 const setProductInCart = (idProduct, value) => {
     let positionThisProductInCart = cart.findIndex((value) => value.product_id == idProduct);
@@ -61,6 +85,23 @@ const setProductInCart = (idProduct, value) => {
     localStorage.setItem('cart', JSON.stringify(cart));
     addCartToHTML();
 }
+
+const setProductInWish = (idProduct, value) => {
+    let positionThisProductInWish = wish.findIndex((value) => value.product_id == idProduct);
+    if(value <= 0){
+        wish.splice(positionThisProductInWish, 1);
+    }else if(positionThisProductInWish < 0){
+        wish.push({
+            product_id: idProduct,
+            quantity: 1
+        });
+    }else{
+        wish[positionThisProductInWish].quantity = value;
+    }
+    localStorage.setItem('wish', JSON.stringify(wish));
+    addWishToHTML();
+}
+
 
 const addCartToHTML = () => {
     iconCartlist.innerHTML = '';
@@ -95,14 +136,44 @@ const addCartToHTML = () => {
     }
 
     iconCartSpan.innerText = totalQuantity;
+    cartTotalQuantity.innerText = totalQuantity;
     cartTotal.innerHTML=`Rs. ${totalPrice}`
 }
+
+const addWishToHTML = () => {
+    iconWishlist.innerHTML = '';
+    if(wish.length > 0){
+        wish.forEach(item => {
+            let newItem = document.createElement('div');
+            newItem.classList.add('item');
+            newItem.dataset.id = item.product_id;
+            let positionProduct = products.findIndex((value) => value.id == item.product_id);
+            let info = products[positionProduct];
+            iconWishlist.appendChild(newItem);
+            newItem.innerHTML = `
+            <div class="image">
+                    <img src="${info.image}">
+                </div>
+                <div class="name">
+                ${info.bookname}
+                </div>
+                <div class="name">
+                ${info.authorname}
+                </div>
+            `;
+            
+        })
+    }
+}
+
+
 
 document.addEventListener('click', (event) => {
     let buttonClick = event.target;
     let idProduct = buttonClick.dataset.id;
     let quantity = null;
     let positionProductInCart = cart.findIndex((value) => value.product_id == idProduct);
+    console.log(positionProductInCart);
     switch (true) {
         case (buttonClick.classList.contains('addCart')):
             quantity = (positionProductInCart < 0) ? 1 : cart[positionProductInCart].quantity+1;
@@ -119,9 +190,25 @@ document.addEventListener('click', (event) => {
         default:
             break;
     }
+
 })
 
+document.addEventListener('click', (event2) => {
+    let buttonClick = event2.target;
+    let idProduct = buttonClick.dataset.id;
+    let quantity = null;
+    let positionProductInWish = wish.findIndex((value) => value.product_id == idProduct);
+    console.log(positionProductInWish);
+    switch (true) {
+        case (buttonClick.classList.contains('wishList')):
+            quantity = (positionProductInWish < 0) ? 1 : wish[positionProductInWish].quantity+1;
+            setProductInWish(idProduct, quantity);
+            break;
+        default:
+            break;
+    }
 
+})
 
 
 

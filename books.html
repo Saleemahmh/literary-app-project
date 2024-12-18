@@ -30,7 +30,8 @@
     <div class="navbar">
         <ul class="nav_right">
             <li><a class="active" href="login.html"><i class="fa-duotone fa-solid fa-arrow-right-to-bracket"></i></a></li>
-            <li><a href="wishlist.html"><i class="fa-duotone fa-solid fa-heart" ></i></a></li>
+            <!-- <li><a href="wishlist.html"><i class="fa-duotone fa-solid fa-heart" ></i></a></li> -->
+            <li><button class="menu-wish"><i class="fa-duotone fa-solid fa-heart"></i></button></li>
             <li><a href="member.html"><i class="fa-duotone fa-solid fa-user-tie" ></i></a></li>
             <li><button class="menu-cart"><i class="fa-duotone fa-solid fa-cart-shopping"><span class="cart-count">0</span></i> </button></li>
            
@@ -93,8 +94,12 @@
                     <span>Total</span>
                     <span class="cart-amount-total"> </span>
                 </div>
+                <div class="cart-amount" id="total-quantity">
+                    <span>Total Quantity</span>
+                    <span class="cart-total-quantity"> </span>
+                </div>
                 <div class="cart-btn">
-                    <button class="checkout">Checkout</button>
+                    <button class="checkout" onclick = checkOut()>Checkout</button>
                     <button class="close">Close</button>
 
                 </div>
@@ -102,7 +107,25 @@
             </div>
         </div>
     </div>
- 
+
+    <div class="wish-container">
+        <div class="wish">
+            <h3 class="wish-title">Your Wishlist</h3>
+            <div class="wish-list">
+        
+            </div>
+            <div class="wish-action">
+                <div class="wish-btn">
+                    <button class="wishclose">Close</button>
+
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+
+
     <section class="newsletter">
         <div class="newstext">
             <h4>Sign Up for Newsletters.</h4>
