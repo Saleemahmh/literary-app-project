@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Prociono&display=swap" rel="stylesheet">
 </head>
-
+<script src="script.js"></script>
 <body>
     <header>
         <div class="header_nav">
@@ -29,7 +29,7 @@
     </div>
     <div class="navbar">
         <ul class="nav_right">
-            <li><a class="active" href="login.html"><i class="fa-duotone fa-solid fa-arrow-right-to-bracket"></i></a></li>
+            <li><a href="login.html"><i class="fa-duotone fa-solid fa-arrow-right-to-bracket"></i></a></li>
             <li><a href="wishlist.html"><i class="fa-duotone fa-solid fa-heart" ></i></a></li>
             <li><a href="member.html"><i class="fa-duotone fa-solid fa-user-tie" ></i></a></li>
             <li><button class="menu-cart"><i class="fa-duotone fa-solid fa-cart-shopping"></i> <span class="cart-count">0</span></button></li>
@@ -44,72 +44,12 @@
         <li><a href="aboutus.html">About Us</a></li>
     </ul>
 </div>
-<div class="main-content">
-<div id="wrapper">
-    <div class="form-wrapper sign-in">
-        <form action="/books.html">
-            <h2>Sign In</h2>
-            <div class="input-group">
-                <input type="text" id="username" required>
-                <label>Username</label>
-            </div>
-            <div class="input-group">
-                <input type="password" required>
-                <label>Password</label>
-            </div>
-            <div class="remember">
-                <label><input type="checkbox">Remember me</label>
-            </div>
-            <button class="form-submit" type="submit"> Sign In</button>
-            <div class="signUp-link">
-                <p>Don't have an account?<a href="#" id="signUpBtn-link">Sign Up</a></p>
-            </div>
-            <div class="social-platform">
-                <p>Or sign in with</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-google"></i></a>
-                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="form-wrapper sign-up" >
-        <form action="/success.html">
-            <h2>Sign Up</h2>
-            <div class="input-group">
-                <input type="text" id="usernamesignup" required>
-                <label>Username</label>
-            </div>
-            <div class="input-group">
-                <input type="email" id="email_id" required>
-                <label>Email</label>
-            </div>
-            <div class="input-group">
-                <input type="password" required>
-                <label>Password</label>
-            </div>
-            <div class="remember">
-                <label><input type="checkbox" required>I agree to the Terms & Conditions</label>
-            </div>
-            <button class="form-submit" type="submit"> Sign Up</button>
-            <div class="signUp-link">
-                <p>Already have an account?<a href="#" id="signInBtn-link">Sign In</a></p>
-            </div>
-        </form>
-    </div>
+
+</header>
+<div class="prompt">
+<h3>Welcome abroad the Literary App. Thank you for being here.</h3>
+     <p><a href="login.html">Login to continue.</a></p>
 </div>
-</div>
-<section class="newsletter">
-    <div class="newstext">
-        <h4>Sign Up for Newsletters.</h4>
-        <p class="paragraphstyle1">Get E-mail updates about latest releases and <span>special offers.</span> </p>
-    </div>
-    <div class="form">
-        <input type="text" placeholder="Your email address">
-        <button>Sign Up</button>
-    </div>
-</section>
 <footer>
     <div class="col">
         <img class="logo" src="assets/logo_new.png" alt=""  width="70" height="70">
@@ -134,14 +74,14 @@
         <a href="#">Delivery Information</a>
         <a href="#">Privacy Policy</a>
         <a href="#">Terms & Conditions</a>
-        <a href="#">Contact Us</a>
+        <a href="contactus.html">Contact Us</a>
     </div>
 
     <div class="col">
         <h4>My Account</h4>
         <a href="login.html">Sign In</a>
-        <a href="books.html">View Cart</a>
-        <a href="books.html">My Wishlist</a>
+        <a href="#">View Cart</a>
+        <a href="#">My Wishlist</a>
         <a href="#">Track My Orders</a>
         <a href="#">Help</a>
     </div>
@@ -159,8 +99,7 @@
         <p class="paragraphstyle2">@ 2024, Saleemah - HTML CSS JavaScript Website</p>
     </div>
 </footer>
-<script src="login.js" type="module"></script>
-<script src="script.js" type="module"></script>
-
 </body>
+
+<script src="app.js"></script>
 </html>

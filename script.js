@@ -45,6 +45,7 @@ let closeCart = document.querySelector('.close');
 let closeWish = document.querySelector('.wishclose');
 let cart = [];
 let wish = [];
+
 // open and close tab cart
 iconCart.addEventListener('click', () => {
     body.classList.add('activeTabCart');
@@ -53,8 +54,20 @@ closeCart.addEventListener('click', () => {
     body.classList.remove('activeTabCart');
 })
 checkOutCart.addEventListener('click', () =>{
+    console.log(localStorage.getItem('isUsername'));
+   if(localStorage.getItem('isUsername') === null){
+    alert("Login to checkout");
+    body.classList.remove('activeTabCart');
+    window.location.href = "/login.html";
+   }else{
     body.classList.remove('activeTabCart');
     alert("Thank You for shopping with us.");
+    iconCartlist.innerHTML='';
+    iconCartSpan.innerText = 0;
+    cartTotalQuantity.innerText = 0;
+    cartTotal.innerHTML=`Rs. 0`;
+    localStorage.removeItem('isUsername');
+   }
     
 })
 // open and close tab wish
@@ -160,6 +173,9 @@ const addWishToHTML = () => {
                 <div class="name">
                 ${info.authorname}
                 </div>
+                <div class="quantity">
+                    <span class="trash" data-id="${info.id}">remove</span>
+                </div>
             `;
             
         })
@@ -204,13 +220,15 @@ document.addEventListener('click', (event2) => {
             quantity = (positionProductInWish < 0) ? 1 : wish[positionProductInWish].quantity+1;
             setProductInWish(idProduct, quantity);
             break;
+            case (buttonClick.classList.contains('trash')):
+                quantity = wish[positionProductInWish].quantity-1;
+                setProductInWish(idProduct, quantity);
+                break;
         default:
             break;
     }
 
 })
-
-
 
 
 

@@ -30,9 +30,9 @@
     <div class="navbar">
         <ul class="nav_right">
             <li><a href="login.html"><i class="fa-duotone fa-solid fa-arrow-right-to-bracket"></i></a></li>
-            <li><a href="wishlist.html"><i class="fa-duotone fa-solid fa-heart" ></i></a></li>
+            <li><button class="menu-wish"><i class="fa-duotone fa-solid fa-heart"></i></button></li>
             <li><a href="member.html"><i class="fa-duotone fa-solid fa-user-tie" ></i></a></li>
-            <li><button class="menu-cart"><i class="fa-duotone fa-solid fa-cart-shopping"></i> <span class="cart-count">0</span></button></li>
+            <li><button class="menu-cart"><i class="fa-duotone fa-solid fa-cart-shopping"><span class="cart-count">0</span></i> </button></li>
         </ul>
     </div>
 </div>
@@ -78,11 +78,11 @@
     </div>
 
 </section>
-<section class="product1">
+<section class="product2">
 <h2 class="heading2">Award Winning Books</h2>
 <p class="paragraphstyle1">Top 10 Books chosen by readers.</p>
-<div class="pro-container">
-    <div class="pro">
+<div class="awpro-container">
+    <div class="awpro">
         <img src="assets/Check.jpg" alt="" width="300" height="350">
         <div class="des">
             <span>Ali Hazelwood</span>
@@ -96,10 +96,10 @@
             </div>
             <h4>Rs. 250</h4>
         </div>
-        <a href="" id="1" style="left:250px;"><i class="fa-duotone fa-solid fa-heart" ></i></a>
+        <a href="books.html" style="left:250px;"><i class="fa-duotone fa-solid fa-heart" ></i></a>
     </div>
 
-    <div class="pro">
+    <div class="awpro">
         <img src="assets/Crooked Kingdom.jpg" alt="" width="300" height="350">
         <div class="des">
             <span>Leigh Bardugo</span>
@@ -113,10 +113,10 @@
             </div>
             <h4>Rs. 350</h4>
         </div>
-        <a href="" id="1" style="left:250px;"><i class="fa-duotone fa-solid fa-heart" ></i></a>
+        <a href="books.html" style="left:250px;"><i class="fa-duotone fa-solid fa-heart" ></i></a>
     </div>
 
-    <div class="pro">
+    <div class="awpro">
         <img src="assets/FinalOffer.jpg" alt="" width="300" height="350">
         <div class="des">
             <span>Lauren Asher</span>
@@ -130,10 +130,10 @@
             </div>
             <h4>Rs. 290</h4>
         </div>
-        <a href="" id="1" style="left:250px;"><i class="fa-duotone fa-solid fa-heart" ></i></a>
+        <a href="books.html" style="left:250px;"><i class="fa-duotone fa-solid fa-heart" ></i></a>
     </div>
 
-    <div class="pro">
+    <div class="awpro">
         <img src="assets/Acurse for true love_.jpg" alt="" width="300" height="350">
         <div class="des">
             <span>Stephanie Garber</span>
@@ -147,10 +147,10 @@
             </div>
             <h4>Rs. 249</h4>
         </div>
-        <a href="wishlist.html" id="1" style="left:250px;"><i class="fa-duotone fa-solid fa-heart" ></i></a>
+        <a href="books.html" style="left:250px;"><i class="fa-duotone fa-solid fa-heart" ></i></a>
     </div>
 
-    <div class="pro">
+    <div class="awpro">
         <img src="assets/Love redesigned.jpg" alt="" width="300" height="350">
         <div class="des">
             <span>Lauren Asher</span>
@@ -164,10 +164,10 @@
             </div>
             <h4>Rs. 550</h4>
         </div>
-        <a href="wishlist.html" id="1" style="left:250px;"><i class="fa-duotone fa-solid fa-heart" ></i></a>
+        <a href="books.html" style="left:250px;"><i class="fa-duotone fa-solid fa-heart" ></i></a>
     </div>
 
-    <div class="pro">
+    <div class="awpro">
         <img src="assets/things we hide.jpg" alt="" width="300" height="350">
         <div class="des">
             <span>Lucy Score</span>
@@ -181,10 +181,10 @@
             </div>
             <h4>Rs. 250</h4>
         </div>
-        <a href="wishlist.html" id="1" style="left:250px;"><i class="fa-duotone fa-solid fa-heart" ></i></a>
+        <a href="books.html" style="left:250px;"><i class="fa-duotone fa-solid fa-heart" ></i></a>
     </div>
 
-    <div class="pro">
+    <div class="awpro">
         <img src="assets/This Woven Kingdom.jpg" alt="" width="300" height="350">
         <div class="des">
             <span>Teherah Mafi</span>
@@ -198,10 +198,10 @@
             </div>
             <h4>Rs. 320</h4>
         </div>
-        <a href="wishlist.html" id="1" style="left:250px;"><i class="fa-duotone fa-solid fa-heart" ></i></a>
+        <a href="books.html" style="left:250px;"><i class="fa-duotone fa-solid fa-heart" ></i></a>
     </div>
 
-    <div class="pro">
+    <div class="awpro">
         <img src="assets/Six of crows.jpg" alt="" width="300" height="350" onclick="window.location.href='bookDetails.html?id=${product.id}';">
         <div class="des">
             <span>Leigh Bardugo</span>
@@ -215,7 +215,7 @@
             </div>
             <h4>Rs. 290</h4>
         </div>
-        <a href="wishlist.html" id="1" style="left:250px;"><i class="fa-duotone fa-solid fa-heart" ></i></a>
+        <a href="books.html" style="left:250px;"><i class="fa-duotone fa-solid fa-heart" ></i></a>
     </div>
 
 </div>
@@ -315,6 +315,7 @@
     </div>
 </footer>
 </body>
-
 <script src="app.js"></script>
+<script src="script.js" type="module"></script>
+
 </html>
