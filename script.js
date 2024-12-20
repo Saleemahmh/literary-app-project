@@ -54,8 +54,8 @@ closeCart.addEventListener('click', () => {
     body.classList.remove('activeTabCart');
 })
 checkOutCart.addEventListener('click', () =>{
-    console.log(localStorage.getItem('isUsername'));
-   if(localStorage.getItem('isUsername') === null){
+    console.log(sessionStorage.getItem('isUsername'));
+   if(sessionStorage.getItem('isUsername') === null){
     alert("Login to checkout");
     body.classList.remove('activeTabCart');
     window.location.href = "/login.html";
@@ -66,7 +66,6 @@ checkOutCart.addEventListener('click', () =>{
     iconCartSpan.innerText = 0;
     cartTotalQuantity.innerText = 0;
     cartTotal.innerHTML=`Rs. 0`;
-    localStorage.removeItem('isUsername');
    }
     
 })
